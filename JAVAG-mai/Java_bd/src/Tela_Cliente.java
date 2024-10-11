@@ -52,6 +52,8 @@ public class Tela_Cliente extends javax.swing.JFrame {
         remake_pesquisa = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         botao_voltar = new javax.swing.JButton();
+        editar_cliente = new javax.swing.JButton();
+        deletar_cliente1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Tela Clientes");
@@ -137,13 +139,14 @@ public class Tela_Cliente extends javax.swing.JFrame {
 
         getContentPane().add(tabela_body, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 500, 80));
 
+        remake_pesquisa.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         remake_pesquisa.setText("Refazer Busca");
         remake_pesquisa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 remake_pesquisaActionPerformed(evt);
             }
         });
-        getContentPane().add(remake_pesquisa, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 190, -1, -1));
+        getContentPane().add(remake_pesquisa, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 200, -1, -1));
 
         botao_voltar.setText("Voltar");
         botao_voltar.addActionListener(new java.awt.event.ActionListener() {
@@ -170,6 +173,26 @@ public class Tela_Cliente extends javax.swing.JFrame {
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        editar_cliente.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        editar_cliente.setText("Editar ");
+        editar_cliente.setMaximumSize(new java.awt.Dimension(113, 27));
+        editar_cliente.setMinimumSize(new java.awt.Dimension(113, 27));
+        editar_cliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editar_clienteActionPerformed(evt);
+            }
+        });
+        getContentPane().add(editar_cliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 200, 130, 30));
+
+        deletar_cliente1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        deletar_cliente1.setText("Deletar ");
+        deletar_cliente1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deletar_cliente1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(deletar_cliente1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 200, 130, -1));
 
         pack();
         setLocationRelativeTo(null);
@@ -212,10 +235,10 @@ public class Tela_Cliente extends javax.swing.JFrame {
             alerta.setText("por favor digite um valor");
         }else {
             
-            Object[] resultado_pesquisa =  pesquisa_bd.pesquisar_tabela(Tela_Cliente.valores.metodo_busca, pergunta_field.getText(), Tela_Cliente.valores.tabela);
+            Object[] resultado_pesquisa =  pesquisa_bd.pesquisar_tabela(valores.metodo_busca, pergunta_field.getText(), valores.tabela);
 
                 if(Arrays.toString(resultado_pesquisa).equals("[notFound]")){
-                    alerta.setText("Não achamos o usuario");
+                    alerta.setText("Usuário não encontrado");
                 }else {
                     pergunta_field.setVisible(false);
                     botao_pesquisar.setVisible(false);
@@ -261,6 +284,14 @@ public class Tela_Cliente extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_linha_azulActionPerformed
 
+    private void editar_clienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editar_clienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_editar_clienteActionPerformed
+
+    private void deletar_cliente1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deletar_cliente1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_deletar_cliente1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -303,6 +334,8 @@ public class Tela_Cliente extends javax.swing.JFrame {
     private javax.swing.JButton botao_nome;
     private javax.swing.JButton botao_pesquisar;
     private javax.swing.JButton botao_voltar;
+    private javax.swing.JButton deletar_cliente1;
+    private javax.swing.JButton editar_cliente;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField linha_azul;
     private javax.swing.JTextField pergunta_field;

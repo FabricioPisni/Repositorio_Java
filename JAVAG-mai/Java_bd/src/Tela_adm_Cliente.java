@@ -87,6 +87,11 @@ public class Tela_adm_Cliente extends javax.swing.JFrame {
 
         jTextField1.setBackground(new java.awt.Color(0, 51, 153));
         jTextField1.setForeground(new java.awt.Color(0, 102, 204));
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 410, -1));
 
         pack();
@@ -111,6 +116,10 @@ public class Tela_adm_Cliente extends javax.swing.JFrame {
         Cadastro_Cliente.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_cadastro_clienteActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
     /**
      * @param args the command line arguments

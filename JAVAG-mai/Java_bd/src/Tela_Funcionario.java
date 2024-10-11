@@ -138,12 +138,12 @@ public class Tela_Funcionario extends javax.swing.JFrame {
 
             },
             new String [] {
-                "ID", "CPF", "Nome", "Sexo", "Idade", "Endereço", "Email", "Telefone"
+                "ID", "CPF", "Nome", "Sexo", "Idade", "Endereço", "Email", "Telefone", "ID_filial", "Cargo"
             }
         ));
         tabela_body.setViewportView(tabela);
 
-        getContentPane().add(tabela_body, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 500, 80));
+        getContentPane().add(tabela_body, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 510, 80));
 
         remake_pesquisa.setText("Refazer Busca");
         remake_pesquisa.addActionListener(new java.awt.event.ActionListener() {
@@ -179,8 +179,8 @@ public class Tela_Funcionario extends javax.swing.JFrame {
     }//GEN-LAST:event_botao_nomeActionPerformed
 
     private void botao_voltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_voltarActionPerformed
-        Tela_Inicial telaInicial = new Tela_Inicial();
-        telaInicial.setVisible(true);
+        Tela_adm_Funcionario Tela_adm_Funcionario = new Tela_adm_Funcionario();
+        Tela_adm_Funcionario.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_botao_voltarActionPerformed
 

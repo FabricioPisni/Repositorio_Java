@@ -31,22 +31,11 @@
                       <Component id="botao_voltar" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="130" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="2" attributes="0">
                           <Component id="jLabel1" alignment="2" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel2" alignment="2" min="-2" max="-2" attributes="0"/>
-                          <Group type="102" attributes="0">
-                              <Component id="botao_id" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="botao_cpf1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="botao_nome" min="-2" max="-2" attributes="0"/>
-                          </Group>
                       </Group>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
-                      <Component id="pergunta_text" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="121" max="-2" attributes="0"/>
@@ -56,6 +45,19 @@
                               <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                               <Component id="botao_pesquisar" min="-2" max="-2" attributes="0"/>
                           </Group>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="botao_id" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="botao_cpf1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="botao_nome" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="pergunta_text" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>

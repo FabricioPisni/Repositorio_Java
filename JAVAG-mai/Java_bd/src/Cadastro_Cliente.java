@@ -57,6 +57,7 @@ public class Cadastro_Cliente extends javax.swing.JFrame {
         masculino_radio = new javax.swing.JRadioButton();
         feminino_radio = new javax.swing.JRadioButton();
         resultado = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Cadastrar Cliente");
@@ -115,7 +116,7 @@ public class Cadastro_Cliente extends javax.swing.JFrame {
 
         jTextField1.setBackground(new java.awt.Color(0, 51, 153));
         jTextField1.setForeground(new java.awt.Color(0, 102, 204));
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 356, 392, -1));
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-8, 320, 410, -1));
 
         campo_cpf.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         campo_cpf.addActionListener(new java.awt.event.ActionListener() {
@@ -193,6 +194,10 @@ public class Cadastro_Cliente extends javax.swing.JFrame {
         resultado.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         getContentPane().add(resultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 300, 230, 20));
 
+        jTextField2.setBackground(new java.awt.Color(0, 51, 153));
+        jTextField2.setForeground(new java.awt.Color(0, 102, 204));
+        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-8, 320, 410, -1));
+
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
@@ -226,9 +231,9 @@ public class Cadastro_Cliente extends javax.swing.JFrame {
         if(cpf.equals("") || nome.equals("") || sexoValor.equals("") || idade.equals("") || endereco.equals("") || email.equals("") || tel.equals("") ) {
             resultado.setText("Por favor preencha todos os campos!");
         }else {
-            String[] cliente = {cpf, nome, sexoValor, idade, endereco, email, tel};
+            String[] cliente = {"cliente", cpf, nome, sexoValor, idade, endereco, email, tel};
         
-            String resultado_cadastro = adicionar_cliente.adicionar_cliente(cliente);
+            String resultado_cadastro = adicionar_usuario.adicionar_usuario(cliente);
         
             resultado.setText(resultado_cadastro);
             
@@ -315,6 +320,7 @@ public class Cadastro_Cliente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
     private javax.swing.JRadioButton masculino_radio;
     private javax.swing.JLabel resultado;
     private javax.swing.ButtonGroup sexo;

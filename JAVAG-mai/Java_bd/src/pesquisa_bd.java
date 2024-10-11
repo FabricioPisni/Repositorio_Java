@@ -22,41 +22,64 @@ public class pesquisa_bd {
             ResultSet resultSet = st.executeQuery( "select * from Clientes");
              if(tabela_busca.equals("funcionarios")) {
                  resultSet = st.executeQuery( "select * from Funcionarios");
+             } else if(tabela_busca.equals("pratos")) {
+                 resultSet = st.executeQuery( "select * from Pratos");
              }
             String metodoBuscaValor = "";
             
-            boolean busca = false;
-            
                 while(resultSet.next()){
-                    String id = resultSet.getString(1);
-                    String cpf = resultSet.getString(2);
-                    String nome = resultSet.getString(3);
-                    String sexo = resultSet.getString(4);
-                    String idade = resultSet.getString(5);
-                    String endereco = resultSet.getString(6);
-                    String email = resultSet.getString(7);
-                    String tel = resultSet.getString(8);
-                    String id_filial = "";
-                    String cargo = "";
-                    if(tabela_busca.equals("funcionarios")) {
-                        id_filial = resultSet.getString(9);
-                        cargo = resultSet.getString(10);
+                    if(!tabela_busca.equals("pratos")) {
+                        String id = resultSet.getString(1);
+                        String cpf = resultSet.getString(2);
+                        String nome = resultSet.getString(3);
+                        String sexo = resultSet.getString(4);
+                        String idade = resultSet.getString(5);
+                        String endereco = resultSet.getString(6);
+                        String email = resultSet.getString(7);
+                        String tel = resultSet.getString(8);
+                        String id_filial = "";
+                        String cargo = "";
+
+                        if(tabela_busca.equals("funcionarios")) {
+                            id_filial = resultSet.getString(9);
+                            cargo = resultSet.getString(10);
+                        }
+
+                        switch (metodoBusca) {
+                            case "id" -> metodoBuscaValor = id;
+                            case "cpf" -> metodoBuscaValor = cpf;
+                            case "nome" -> metodoBuscaValor = nome;
+                        }
+
+                        if(itemBusca.equals(metodoBuscaValor)) {
+                            if(tabela_busca.equals("funcionarios")) {
+                                Object[] dados = {id, cpf, nome, sexo, idade, endereco, email, tel, id_filial, cargo};
+                                return dados;
+                            }
+                        }
                     }
                     
-                    switch (metodoBusca) {
-                        case "id" -> metodoBuscaValor = id;
-                        case "cpf" -> metodoBuscaValor = cpf;
-                        case "nome" -> metodoBuscaValor = nome;
-                    }
-                
-                    if(itemBusca.equals(metodoBuscaValor)) {
-                        if(tabela_busca.equals("funcionarios")) {
-                            Object[] dados = {id, cpf, nome, sexo, idade, endereco, email, tel, id_filial, cargo};
+                        String id = resultSet.getString(1);
+                        String nome = resultSet.getString(2);
+                        String descricao = resultSet.getString(3);
+                        String valor = resultSet.getString(4);
+                        
+                        switch (metodoBusca) {
+                            case "id" -> metodoBuscaValor = id;
+                            case "nome" -> metodoBuscaValor = nome;
+                        }
+                        
+                        if(itemBusca.equals(metodoBuscaValor)) {
+                            Object[] dados = {id, nome, descricao, valor};
                             return dados;
                         }
-                        Object[] dados = {id, cpf, nome, sexo, idade, endereco, email, tel};
-                        return dados;
-                    }              
+                    
+                    
+                    
+
+                        
+  
+                    
                 }
             
             con.close();
@@ -70,3 +93,6 @@ public class pesquisa_bd {
         
     }
 }
+
+
+
